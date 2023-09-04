@@ -1,0 +1,36 @@
+﻿@model List<TheaterVM>
+
+@{
+    ViewData["Title"] = "TheaterList";
+    Layout = "~/Areas/Management/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Mevcut Salon Listesi</h4>
+<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+
+<hr />
+
+<div>
+    <table class="table" style="text-align:center">
+        <thead>
+            <tr>
+                <th scope="col">Salon Adı</th>
+                <th scope="col">Salon Kapasitesi</th>
+                <th scope="col">Ekran Türü</th>
+                <th scope="col">Detaylar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Capacity</td>
+                    <td>@item.ScreenType</td>
+                    <td><a asp-controller="Theater" asp-action="TheaterDetails" asp-route-id="@item.Id" class="btn btn-outline-secondary btn-sm">Salon Detayları</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

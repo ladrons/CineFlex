@@ -1,0 +1,56 @@
+﻿@model TicketingVM
+
+@{
+    ViewData["Title"] = "SelectTicketType";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Bilet Seçim Sayfası</h4>
+<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+
+<hr />
+
+<div>
+    <form asp-action="SelectTicketType" method="post">
+
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Bilet Adı</th>
+                        <th scope="col">Fiyat</th>
+                        <th scope="col">Bilet Adedi</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var ticket in Model.ActiveTickets)
+                    {
+                        <tr>
+                            <td>@ticket.Name</td>
+                            <td>@ticket.Price₺</td>
+                            <td>
+                                <div class="input-group">
+                                    <input type="number"
+                                           class="form-control qty-input"
+                                           min="0"
+                                           max="10"
+                                           value="0"
+                                           name="ticketQuantity[@ticket.Id]"
+                                           oninput="updateQuantity()">
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <button type="submit" class="btn btn-success" id="select-seat-btn">Koltuk Seç</button>
+        </div>
+
+    </form>
+</div>
+
+<script src="~/js/Ticketing/SelectTicketType.js"></script>

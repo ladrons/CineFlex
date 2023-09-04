@@ -1,0 +1,25 @@
+﻿@model FormatVM
+
+@{
+    ViewData["Title"] = "AddFormat";
+    Layout = "~/Areas/Management/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Format Ekleme Sayfası</h1>
+
+<div>
+    <form asp-action="AddFormat" method="post">
+        <div class="form-group mb-3">
+            <label asp-for="Name">Format Adı</label>
+            <input asp-for="Name" class="form-control" id="exampleInputEmail1">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-outline-success">Formatı Kaydet</button>
+    </form>
+</div>
+
+@section Scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

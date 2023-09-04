@@ -1,0 +1,38 @@
+﻿@model TicketingVM
+
+@{
+    ViewData["Title"] = "SelectSeat";
+    Layout = "~/Areas/Management/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/Ticketing/SelectSeat.css" asp-append-version="true" />
+
+<h4>Koltuk Seçme Sayfası</h4>
+<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+
+<hr />
+
+<div>
+    <div class="center-screen">
+        <div class="screen">Sinema Perdesi</div>
+    </div>
+
+    <div class="center-seat">
+        <div id="seats"
+             data-capacity="@Model.TheaterCapacity"
+             data-quantity="@Model.TicketQuantity"
+
+             data-soldseats='@Html.Raw(Json.Serialize(Model.SoldSeats))'>
+        </div>
+    </div>
+
+    <div>
+        <form asp-action="SelectSeat" method="post" id="myForm">
+            <div class="position-fixed end-0 p-3">
+                <button type="submit" class="btn btn-success">Ödeme Sayfasına Geç</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="~/js/Ticketing/SelectSeat.js"></script>

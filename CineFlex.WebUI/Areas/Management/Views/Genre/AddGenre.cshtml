@@ -1,0 +1,28 @@
+﻿@model GenreVM
+
+@{
+    ViewData["Title"] = "AddGenre";
+    Layout = "~/Areas/Management/Views/Shared/_Layout.cshtml";
+}
+
+<h5>Tür Ekleme Sayfası</h5>
+
+<hr />
+
+<div>
+    <form asp-action="AddGenre" method="post">
+        <div class="form-group mb-3">
+            <label asp-for="Name">Tür İsmi</label>
+            <input asp-for="Name" class="form-control" id="exampleInputEmail1">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-outline-success">Türü Kaydet</button>
+    </form>
+</div>
+
+
+@section Scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

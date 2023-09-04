@@ -1,0 +1,67 @@
+﻿body {
+}
+
+.center-screen {
+    position: relative;
+    margin: 0 auto;
+    /*width: 600px;*/
+    height: 70px;
+    /*background-color: #f5f5f5;*/
+    /*padding: 20px;*/
+    box-sizing: border-box;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.center-seat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.seat {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    margin: 5px;
+    text-align: center;
+    line-height: 35px;
+    border: 1px solid black;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer; /* Koltuklara tıklanabilir özellik ekleme */
+}
+
+    .seat.selected {
+        background-color: green; /* Seçilen koltukların arka plan rengi */
+        color: white; /* Seçilen koltukların yazı rengi */
+    }
+
+    .seat.sold {
+        background-color: red; /* Satılan koltukların arka plan rengi */
+        color: white; /* Satılan koltukların yazı rengi */
+        cursor: not-allowed; /* Satılan koltuklara tıklanamaz özellik ekleme */
+    }
+
+    .seat.reserved {
+        background-color: yellow; /* Rezerve koltukların arka plan rengi */
+        color: black; /* Rezerve koltukların yazı rengi */
+        cursor: not-allowed; /* Rezerve koltuklara tıklanamaz özellik ekleme */
+    }
+
+.screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 30px;
+    background-color: #333;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

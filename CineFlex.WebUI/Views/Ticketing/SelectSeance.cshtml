@@ -1,0 +1,56 @@
+﻿@model TicketingVM
+
+@{
+    ViewData["Title"] = "SelectSeance";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Seans Sayfası</h4>
+<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+
+<hr />
+
+<div>
+
+    <div class="row mb-2">
+
+        <div class="col" style="text-align:center">
+            <h5>Tarih Seçiniz</h5>
+
+            <div class="list-group" id="dateDiv">
+                @foreach (var date in Model.MovieSeancesDate)
+                {
+                    <button class="list-group-item list-group-item-action get-times"
+                            type="button"
+                            value="@date"
+                            data-movie-id="@Model.MovieId">
+                        @date.ToLongDateString()
+                    </button>
+                }
+            </div>
+        </div>
+
+        <div class="col" style="text-align:center">
+            <h5>Saat Seçiniz</h5>
+
+            <div class="list-group" id="timeDiv"></div>
+        </div>
+    </div>
+
+    <div>
+        <form method="post" asp-controller="Ticketing" asp-action="SelectSeance" >
+            <input type="hidden" name="MovieId" id="MovieId" asp-for="MovieId" value="" />
+
+            <input type="hidden" name="seanceDate" id="Date" asp-for="SeanceDate" value="" />
+            <input type="hidden" name="seanceTime" id="Time" asp-for="SeanceTime" value="" />
+
+            <button type="submit" class="btn btn-outline-success btn-sm">Devam Et</button>
+        </form>
+    </div>
+
+</div>
+
+<script src="~/js/Ticketing/SelectSeance.js"></script>
+
+
+@*<input type="hidden" name="SeanceDate" id="seanceDate" asp-for="SeanceDate" value="" />*@
