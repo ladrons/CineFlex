@@ -13,14 +13,13 @@ namespace CineFlex.WebUI.Areas.Management.Controllers
         private readonly ILogger<GenreController> _logger;
         private readonly IMapper _mapper;
 
-        IGenreManager _genreMan; IMovieGenreManager _movieGenreMan;
+        IGenreManager _genreMan;
 
         public GenreController(IMapper mapper, ILogger<GenreController> logger, IGenreManager genreMan, IMovieGenreManager movieGenreMan)
         {
             _genreMan = genreMan;
             _logger = logger;
-            _mapper = mapper;
-            _movieGenreMan = movieGenreMan;
+            _mapper = mapper;           
         }
 
         //----//

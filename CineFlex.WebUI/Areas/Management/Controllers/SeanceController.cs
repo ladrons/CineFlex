@@ -46,7 +46,7 @@ namespace CineFlex.WebUI.Areas.Management.Controllers
             Movie foundMovie = _movieMan.Find(seance.MovieId);
 
             if (_seanceMan.CreateAndSaveSeances(foundTheater, foundMovie, seance.StartDate, seance.EndDate, seance.SeanceTimeList))
-                return View(); //ToDo: Seanslar oluştuktan sonra ilgili film ve salon için aktif seansların gözüktüğü bir listeye yönlendir.
+                return RedirectToAction("MovieList", "Movie", new { area = "Management" });
 
             else return RedirectToAction("Error", "Home", new { area = "Management" });
         }
@@ -77,4 +77,3 @@ namespace CineFlex.WebUI.Areas.Management.Controllers
         #endregion
     }
 }
-

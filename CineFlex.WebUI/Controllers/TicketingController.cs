@@ -135,7 +135,7 @@ namespace CineFlex.WebUI.Controllers
             MainTicketInfoDTO tempTicket = GetObjectToSession<MainTicketInfoDTO>("tempTicket");
 
             int seatIndex = 0;
-            foreach (var item in tempTicket.SubTicketInfos)
+            foreach (var item in tempTicket.SubTicketsInfo)
             {
                 item.SeatName = selectedSeats[seatIndex];
                 seatIndex++;
@@ -169,9 +169,7 @@ namespace CineFlex.WebUI.Controllers
 
                 if (await _soldTicketMan.CreateSoldTicket(tempTicket, foundCustomer))
                 {
-                    return RedirectToAction("Success"); //Todo: oluşturulacak.
-
-                    //Gerekli işlemler yapıldı.
+                    return RedirectToAction("PaymentSuccessful");
                 }
                 else
                 {
@@ -190,6 +188,11 @@ namespace CineFlex.WebUI.Controllers
 
             return View();
         }
+
+        //----------//
+
+        [Route("PaymentSuccessful")]
+        public IActionResult PaymentSuccessful() => View();
 
         #region HelperMethods
         private void SetObjectToSession(string jsonKey, object serializedObject)

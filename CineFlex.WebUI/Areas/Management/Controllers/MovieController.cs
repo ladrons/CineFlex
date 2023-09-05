@@ -80,7 +80,7 @@ namespace CineFlex.WebUI.Areas.Management.Controllers
         //-----//
 
         #region HelperMethods
-        private MovieVM PrepareViewModel() //ToDo: Bu metodun adı güncellenecek. Yaptığı işi açıklayan daha iyi bir isim. (UPDATE METODU İLE BİRLİKTE YAPILACAK.)
+        private MovieVM PrepareViewModel() //Todo: Metodun adı daha açıklayıcı olmalı.
         {
             MovieVM mvm = new MovieVM
             {
