@@ -36,7 +36,7 @@ namespace CineFlex.Persistence.Managers
 
                 return true;
             }
-            catch (Exception ex) //todo: Burada ki hata durumunu kullanıcının göreceği şekilde ayarla. Proje çökmemeli. (23/08 TEST ET. ÇÖKÜYORSA DÜZELT.)
+            catch (Exception ex)
             {
                 _errorService.LogException(ex);
                 return false;

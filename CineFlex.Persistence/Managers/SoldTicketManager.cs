@@ -67,7 +67,7 @@ namespace CineFlex.Persistence.Managers
         {
             try
             {
-                foreach (SubTicketInfoDTO item in tempTicket.SubTicketInfos)
+                foreach (SubTicketInfoDTO item in tempTicket.SubTicketsInfo)
                 {
                     SoldTicket newSoldTicket = new SoldTicket
                     {
@@ -109,7 +109,7 @@ namespace CineFlex.Persistence.Managers
                 TicketId = foundTicket.Id
             };
 
-            tempTicket.SubTicketInfos.Add(subTicket);
+            tempTicket.SubTicketsInfo.Add(subTicket);
         }
     }
 }
