@@ -12,7 +12,7 @@ namespace CineFlex.Application.DTOs
     {
         public MainTicketInfoDTO()
         {
-            SubTicketInfos = new List<SubTicketInfoDTO>();
+            SubTicketsInfo = new List<SubTicketInfoDTO>();
             TicketNames = new List<string>();
         }
 
@@ -40,6 +40,6 @@ namespace CineFlex.Application.DTOs
 
         //List Properties
         public List<string> TicketNames { get; set; }
-        public List<SubTicketInfoDTO> SubTicketInfos { get; set; } //TODO: İsmi 'SubTicketsInfo' olarak değiştir.
+        public List<SubTicketInfoDTO> SubTicketsInfo { get; set; }
     }
 }
