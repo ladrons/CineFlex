@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using CineFlex.Application.Interfaces.Managers;
-using CineFlex.WebUI.ViewModels;
+using CineFlex.Application.ViewModels;
 using CineFlex.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 

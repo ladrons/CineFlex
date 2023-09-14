@@ -1,3 +1,4 @@
+using CineFlex.Application;
 using CineFlex.Infrastructure;
 using CineFlex.Persistence;
 using System.Reflection;
@@ -11,10 +12,9 @@ builder.Services.AddSession();
 builder.Services.AddHttpClient();
 
 builder.Services.AddPersistenceServices(builder.Configuration);
+
+builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices();
-
-builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
-
 
 var app = builder.Build();
 

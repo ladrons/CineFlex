@@ -1,4 +1,4 @@
-﻿using CineFlex.Application.Interfaces.Repositories;
+﻿using CineFlex.Domain.Interfaces.Repositories;
 using CineFlex.Domain.Common;
 using CineFlex.Persistence.Context;
 using Microsoft.EntityFrameworkCore;

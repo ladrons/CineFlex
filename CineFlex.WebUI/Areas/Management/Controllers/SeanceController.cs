@@ -2,7 +2,7 @@
 using CineFlex.Application.Interfaces.Managers;
 using CineFlex.Application.Interfaces.Services;
 using CineFlex.Domain.Models;
-using CineFlex.WebUI.ViewModels;
+using CineFlex.Application.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CineFlex.WebUI.Areas.Management.Controllers
